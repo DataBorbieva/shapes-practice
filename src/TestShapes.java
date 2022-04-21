@@ -42,5 +42,53 @@ public class TestShapes {
          */
 
 
+         //Creating Objects
+         Rectangle rectangle = new Rectangle();
+         Square square = new Square();
+         Circle circle = new Circle();
+         //Rectangle setting
+         rectangle.setWidth(5.5);
+         rectangle.setHeight(6);
+         //Square setting
+        square.setSide(2.5);
+        //Circle setting
+        circle.setRadius(4);
+
+        //Storing all objects in a collection
+        ArrayList<Shape> shapes = new ArrayList<>();
+        shapes.add(rectangle);
+        shapes.add(square);
+        shapes.add(circle);
+
+        //Printing them out using for-each loop
+      //  for (Shape shape : shapes) {
+        //    System.out.println(shape);
+
+
+            //Printing circle info
+        System.out.println("\n" + circle);
+            System.out.println("Area of the Circle is = " + circle.area());
+            System.out.println("Perimeter of the Circle is = " + circle.perimeter());
+
+            //Printing rectangle info
+        System.out.println("\n" + rectangle);
+            System.out.println("Area of the Rectangle is = " + rectangle.area());
+            System.out.println("Perimeter of the Rectangle is = " + rectangle.perimeter());
+
+            //Printing square info
+        System.out.println("\n" + square);
+            System.out.println("Area of the Square is = " + square.area());
+            System.out.println("Perimeter of the Square is = " + square.perimeter());
+
+            double max = Double.MIN_VALUE;
+            Shape objectName = null;
+        for (Shape shape : shapes) {
+            if(shape.area() > max) max = shape.area();
+            objectName = shape;
+
+
+        }
+
+        System.out.println("\n" + objectName.getClass().getSimpleName() + " has the largest area as " + max);
     }
 }
